@@ -3,15 +3,15 @@
 RPC_URL=
 PRIVATE_KEY=
 ETHSCAN_API_KEY=
-SUB_ID=
 CONTRACT_NAME=
+CONST_ARG=
 
 export RPC_URL=$RPC_URL
 export PRIVATE_KEY=$PRIVATE_KEY
 export ETHSCAN_API_KEY=$ETHSCAN_API_KEY
-export SUB_ID=$SUB_ID
 export CONTRACT_NAME=$CONTRACT_NAME
+export CONST_ARG=$CONST_ARG
 
 # export RUST_BACKTRACE=1
 
-forge create $CONTRACT_NAME --rpc-url $RPC_URL --private-key $PRIVATE_KEY --constructor-args $SUB_ID
+forge create $CONTRACT_NAME --rpc-url $RPC_URL --private-key $PRIVATE_KEY --constructor-args $CONST_ARG

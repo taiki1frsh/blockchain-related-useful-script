@@ -3,7 +3,6 @@
 RPC_URL=
 PRIVATE_KEY=
 ETHSCAN_API_KEY=
-SUB_ID=
 CONTRACT_ADDR=
 CONST_ARG=
 CHAIN=
@@ -11,9 +10,8 @@ CHAIN=
 export RPC_URL=$RPC_URL
 export PRIVATE_KEY=$PRIVATE_KEY
 export ETHSCAN_API_KEY=$ETHSCAN_API_KEY
-export SUB_ID=$SUB_ID
 export CONTRACT_ADDR=$CONTRACT_ADDR
 export CONST_ARG=$CONST_ARG
 export CHAIN=$CONST_ARG
 
-forge verify-contract $CONTRACT_ADDR src/vrfExample.sol:vrfExample $ETHSCAN_API_KEY --chain $CHAIN --constructor-args $CONST_ARG
+forge verify-contract $CONTRACT_ADDR <path:contract_name> $ETHSCAN_API_KEY --chain $CHAIN --constructor-args $CONST_ARG
