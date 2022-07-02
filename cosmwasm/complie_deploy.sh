@@ -4,12 +4,10 @@
 
 # compile stuff
 
-cargo wasm # stable toolchian is desireble?
-
 # In case to produce much smaller .wasm file
-# RUSTFLAGS='-C link-arg=-s' cargo wasm
+RUSTFLAGS='-C link-arg=-s'
 
-RUST_BACKTRACE=1 cargo unit-test
+RUST_BACKTRACE=1
 
 # optimize to reduce code size. need docker installed
 docker run --rm -v "$(pwd)":/code \
