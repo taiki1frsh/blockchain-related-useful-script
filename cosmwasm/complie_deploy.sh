@@ -9,11 +9,18 @@ RUSTFLAGS='-C link-arg=-s'
 
 RUST_BACKTRACE=1
 
-# optimize to reduce code size. need docker installed
+# optimize to reduce code size. need docker installed for arm cpu.
+# and single contract
 docker run --rm -v "$(pwd)":/code \
   --mount type=volume,source="$(basename "$(pwd)")_cache",target=/code/target \
   --mount type=volume,source=registry_cache,target=/usr/local/cargo/registry \
-  cosmwasm/rust-optimizer:0.12.6
+  cosmwasm/rust-optimizer-arm64:0.12.6
+  
+# incase multi contracts
+docker run --rm -v "$(pwd)":/code \
+  --mount type=volume,source="$(basename "$(pwd)")_cache",target=/code/target \
+  --mount type=volume,source=registry_cache,target=/usr/local/cargo/registry \
+  cosmwasm/workspace-optimizer-arm64:0.12.6
 
 
 # store and instantiate struff
