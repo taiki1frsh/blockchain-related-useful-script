@@ -6,6 +6,8 @@ export STAKE_DENOM=
 
 rm -fr ~/.$DAEMON;
 
+set -o errexit -o nounset
+
 $DAEMON init --chain-id test test;
 
 $DAEMON keys mnemonic > val.txt;

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -o errexit -o nounset
+
 # First source .env file to set env variables
 
 # compile stuff
