@@ -8,7 +8,6 @@ rm -fr ~/.$DAEMON;
 
 $DAEMON init --chain-id test test;
 
-
 $DAEMON keys mnemonic > val.txt;
 $DAEMON keys mnemonic > usr.txt;
 $DAEMON keys mnemonic > usr2.txt;
